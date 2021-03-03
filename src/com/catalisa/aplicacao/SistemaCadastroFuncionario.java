@@ -41,7 +41,7 @@ public class SistemaCadastroFuncionario {
                Gerente gerente = ServicoFuncionario.cadastrarGerente(nome, id, cargo,salario,contaEspecial);
 
                EntradaSaida.mostrarTexto(gerente.toString());
-
+                System.out.println("Olá, mundo!!!");
             } else if (resposta == 2) {
                 EntradaSaida.mostrarTexto("Informe o NOME, ID, CARGO, SALÁRIO, TAXA DO DIA EM % e SALDO: ");
                 Operacional operacional = ServicoFuncionario.cadastrarOperacional(
