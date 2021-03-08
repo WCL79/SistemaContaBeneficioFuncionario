@@ -26,11 +26,13 @@ public class SistemaCadastroFuncionario {
         while (controle) {
             menu();
             int resposta = EntradaSaida.criarScanner().nextInt();
+
             if (resposta == 0) {
                 controle = false;
+            } else {
+                ContextoTela contextoTela = new TelaConfig().getContextoTela();
+                contextoTela.executarTela(resposta);
             }
-            ContextoTela contextoTela = new TelaConfig().getContextoTela();
-            contextoTela.executarTela(resposta);
         }
     }
 }
