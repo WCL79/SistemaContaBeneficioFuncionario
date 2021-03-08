@@ -1,5 +1,7 @@
 package com.catalisa.aplicacao;
 
+import com.catalisa.aplicacao.tela.ContextoTela;
+import com.catalisa.config.TelaConfig;
 import com.catalisa.entidade.conta.Conta;
 import com.catalisa.entidade.conta.ContaCartaoCredito;
 import com.catalisa.entidade.conta.ContaEspecial;
@@ -11,7 +13,6 @@ import com.catalisa.servico.ServicoFuncionario;
 public class SistemaCadastroFuncionario {
 
     public static void menu(){
-
         StringBuilder model = new StringBuilder();
         model.append("Digite:\n");
         model.append(" 0 Para do SAIR do Sistema:\n ");
@@ -22,16 +23,14 @@ public class SistemaCadastroFuncionario {
     }
     public void executarSistema() {
         boolean controle = true;
-        menu();
         while (controle) {
+            menu();
             int resposta = EntradaSaida.criarScanner().nextInt();
-            if (resposta == 1) {
-
-            } else if (resposta == 2) {
-
-            } else if (resposta == 3) {
-
+            if (resposta == 0) {
+                controle = false;
             }
+            ContextoTela contextoTela = new TelaConfig().getContextoTela();
+            contextoTela.executarTela(resposta);
         }
     }
 }
