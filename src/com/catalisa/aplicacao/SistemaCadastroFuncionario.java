@@ -26,40 +26,11 @@ public class SistemaCadastroFuncionario {
         while (controle) {
             int resposta = EntradaSaida.criarScanner().nextInt();
             if (resposta == 1) {
-               EntradaSaida.mostrarTexto("Informe o NOME, ID, CARGO, SALÁRIO, LIMITE e SALDO: ");
-               String nome = EntradaSaida.criarScanner().nextLine();
-               int id =  EntradaSaida.criarScanner().nextInt();
-               String cargo = EntradaSaida.criarScanner().nextLine();
-               double salario =  EntradaSaida.criarScanner().nextDouble();
 
-               double limite = EntradaSaida.criarScanner().nextDouble();
-               double saldo = EntradaSaida.criarScanner().nextDouble();
-
-               ContaEspecial contaEspecial = new ContaEspecial(limite, saldo);
-               contaEspecial.setInvestimentoDiferenciado(0.075, salario);
-
-               Gerente gerente = ServicoFuncionario.cadastrarGerente(nome, id, cargo,salario,contaEspecial);
-
-               EntradaSaida.mostrarTexto(gerente.toString());
-                System.out.println("Olá, mundo!!!");
             } else if (resposta == 2) {
-                EntradaSaida.mostrarTexto("Informe o NOME, ID, CARGO, SALÁRIO, TAXA DO DIA EM % e SALDO: ");
-                Operacional operacional = ServicoFuncionario.cadastrarOperacional(
-                        EntradaSaida.criarScanner().nextLine(),
-                        EntradaSaida.criarScanner().nextInt(),
-                        EntradaSaida.criarScanner().nextLine(),
-                        EntradaSaida.criarScanner().nextDouble(),
-                        new Conta(EntradaSaida.criarScanner().nextDouble(),
-                                  EntradaSaida.criarScanner().nextDouble()));
-                                  EntradaSaida.mostrarTexto(operacional.toString());
+
             } else if (resposta == 3) {
-                EntradaSaida.mostrarTexto("Informe o NOME, ID, CARGO, SALÁRIO: ");
-                Vendedor vendedor = ServicoFuncionario.cadastrarVendedor(
-                        EntradaSaida.criarScanner().nextLine(),
-                        EntradaSaida.criarScanner().nextInt(),
-                        EntradaSaida.criarScanner().nextLine(),
-                        EntradaSaida.criarScanner().nextDouble());
-                EntradaSaida.mostrarTexto(vendedor.toString());
+
             }
         }
     }
