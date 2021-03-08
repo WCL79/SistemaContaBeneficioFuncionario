@@ -14,4 +14,8 @@ public class TelaConfig {
         contextoTela.setTelaStrategyHashMap(2, new TelaDois());
         contextoTela.setTelaStrategyHashMap(3, new TelaTres());
     }
+
+    public ContextoTela getContextoTela() {
+        return contextoTela;
+    }
 }
